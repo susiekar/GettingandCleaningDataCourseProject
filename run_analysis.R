@@ -1,7 +1,7 @@
 # Clean up workspace
 rm(list=ls())
 
-#set working directory to the location where the dataset was unzipped
+#set working directory to the location where the dataset is going to be downloaded and unzipped
 setwd('C:/Users/Susie/Documents/GitHub/GettingandCleaningDataCourseProject/');
 
 file <- "data.zip"
@@ -24,11 +24,10 @@ if(!is.element("data.table", installed.packages()[,1])){
 library(dplyr)
 library(data.table)
 
-## Create data and folders   
-# verifies the data zip file has been downloaded
+## Create data and folders and verify that the data.zip file has been downloaded
 if(!file.exists(file)){
         
-        ##Downloads the data file
+        ##Download the data file
         download.file(url,file, mode = "wb")
         
 }
@@ -51,7 +50,7 @@ x_training <- read.table("./UCI HAR Dataset/train/X_train.txt",header=FALSE)
 y_test <- read.table("./UCI HAR Dataset/test/y_test.txt",header=FALSE)
 y_training <- read.table("./UCI HAR Dataset/train/y_train.txt",header=FALSE)
 
-# Assigin column names to the data imported above
+# Assign column names to the data imported above
 colnames(activity_labels)  = c('activityId','activityLabel');
 colnames(subject_training)  = "subjectId";
 colnames(x_training)        = features[,2]; 
