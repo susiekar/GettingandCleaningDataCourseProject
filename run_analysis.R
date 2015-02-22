@@ -20,8 +20,8 @@ if(!is.element("data.table", installed.packages()[,1])){
         install.packages("data.table")
 }
 
-#load dplyr and data.table
-library(dplyr)
+#load plyr and data.table
+library(plyr)
 library(data.table)
 
 ## Create data and folders and verify that the data.zip file has been downloaded

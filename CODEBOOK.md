@@ -20,24 +20,35 @@ For each record in the dataset it is provided:
 - Its activity label. 
 - An identifier of the subject who carried out the experiment.
 
-## Step 1: 
-- Clean up workspace
-- Set working directory to the location where the dataset is going to be downloaded and unzipped
-- Check if the package plyr is installed
-- Check if the package data.table is installed
-- Load plyr and data.table
+## Variables for file manipulation
 
-## Step 2:
-- Create data and folders and verify that the data.zip file has been downloaded
-- Read files
-- Assign column names to the data
+file = "data.zip"
+url == "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
+data_path == "UCI HAR Dataset"
+dataset_folder == "Dataset"
 
-## Step 3:
-- Create the test data set by merging the x_test, y_test and subject_test data
-- Create training data by merging y_training, subject_training, and x_training
-- Merge training and test sets
-- Update values with correct activity names
 
-## Step 4:
-- Create a dataset that extract only the measurements on the mean and standard deviation for each measurement 
-- Create a second, independent tidy dataset with the average of each variable for each activity and each subject
+## Variables for reading data files
+activity_labels = activity_labels.txt
+features = features.txt
+subject_test = subject_test.txt
+subject_training = subject_train.txt
+x_test = X_test.txt
+x_training = X_train.txt
+y_test = y_test.txt
+y_training =y_train.txt
+
+## Variables for merged data sets
+test_data = merging x_test, y_test and subject_test data
+training_data = merging y_training, subject_training, and x_training
+data = Merge training and test sets
+
+ 
+dataset = Extract only the measurements on the mean and standard deviation for each measurement
+dataset2 = Create a second, independent tidy data set with the average of each variable for each activity and each subject. 
+
+
+
+
+
+
