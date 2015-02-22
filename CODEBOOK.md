@@ -23,9 +23,9 @@ For each record in the dataset it is provided:
 ## Step 1: 
 - Clean up workspace
 - Set working directory to the location where the dataset is going to be downloaded and unzipped
-- Check if the package dplyr is installed
+- Check if the package plyr is installed
 - Check if the package data.table is installed
-- Load dplyr and data.table
+- Load plyr and data.table
 
 ## Step 2:
 - Create data and folders and verify that the data.zip file has been downloaded

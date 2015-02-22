@@ -9,10 +9,10 @@ url <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR
 data_path <- "UCI HAR Dataset"
 dataset_folder <- "Dataset"
 
-#Check if the package dplyr is installed
+#Check if the package plyr is installed
 
-if(!is.element("dplyr", installed.packages()[,1])){
-        install.packages("dplyr")
+if(!is.element("plyr", installed.packages()[,1])){
+        install.packages("plyr")
 }
 
 #Check if the package data.table is installed
@@ -80,8 +80,10 @@ write.table(dataset, file = "./Dataset/data.txt")
 
 #Create a second, independent tidy data set with the average of each variable for each activity and each subject. 
 limited_colMeans <- function(data) { colMeans(data[, -c(1,2)])}
-tidyMeans <- ddply(dataset, .(activityId, subjectId), limited_colMeans)
+dataset2 <- ddply(dataset, .(activityId, subjectId), limited_colMeans)
 
 
-write.table(tidyMeans, file = "./Dataset/tidy_data.txt")
+write.table(dataset2, file = "./Dataset/tidy_data.txt", row.name=FALSE)
+
+
 
